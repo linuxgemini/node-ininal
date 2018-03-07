@@ -69,7 +69,7 @@ class ConnectionHandler {
                 return reject("Endpoint returned nothing");
             } catch (error) {
                 var remoteErr = error.response.body;
-                if (remoteErr.response) return reject(new ininalAPIError(remoteErr.response.errorCode, remoteErr.response.errorDescription, remoteErr.response.errorDescription));
+                if (remoteErr.response) return reject(new ininalAPIError(remoteErr.response.errorCode, remoteErr.response.errorDescription));
                 return reject(error);
             }
         });
