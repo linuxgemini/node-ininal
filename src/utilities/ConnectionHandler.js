@@ -27,7 +27,7 @@ class ConnectionHandler {
             baseUrl: this.endpoint,
             uri: path,
             headers: {
-                "User-Agent": `node-ininal Client (${Package.homepage.split("#")[0]}, ${Package.version}) Node.js/${process.version}`,
+                "User-Agent": `node-ininal Application (${Package.homepage.split("#")[0]}, ${Package.version}) Node.js/${process.version}`,
                 "Content-Type": "application/json",
                 "Language": "TR",
                 "Date": new Date().toUTCString()
