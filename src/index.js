@@ -14,4 +14,6 @@ module.exports = {
     Users: require("./interfaces/Users"),
     Cards: require("./interfaces/Cards"),
     Transactions: require("./interfaces/Transactions"),
+
+    ininalAPIError: require("./utilities/ininalAPIError")
 };

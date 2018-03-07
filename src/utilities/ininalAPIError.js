@@ -16,6 +16,7 @@ class ininalAPIError extends Error {
         }
 
         // Custom debugging information
+        this.name = "ininalAPIError";
         this.code = errcode;
         this.message = errmessage;
         this.date = new Date();
