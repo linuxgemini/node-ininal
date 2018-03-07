@@ -1,0 +1,28 @@
+{
+  "name": "ininal",
+  "version": "0.0.1",
+  "description": "API wrapper for the Turkish Fintech company \"ininal\".",
+  "main": "./src/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxgemini/node-ininal.git"
+  },
+  "keywords": [
+    "node.js",
+    "ininal",
+    "fintech"
+  ],
+  "author": "linuxgemini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linuxgemini/node-ininal/issues"
+  },
+  "homepage": "https://github.com/linuxgemini/node-ininal#readme",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
