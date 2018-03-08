@@ -16,6 +16,9 @@ class Transactions extends ConnectionHandler {
         this.client = client;
     }
 
+    /**
+     * @private
+     */
     _reqconfig() {
         return new Promise(async (resolve, reject) => {
             try {

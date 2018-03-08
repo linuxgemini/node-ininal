@@ -7,6 +7,18 @@
 
 const ConnectionHandler = require("../utilities/ConnectionHandler");
 
+/**
+ * @typedef {Object} UserObject
+ * @property {string} name
+ * @property {string} surname
+ * @property {string} email
+ * @property {string} gsmNumber
+ * @property {string} tcIdentificationNumber
+ * @property {string} password
+ * @property {string} birthDate YYYY-MM-DD
+ * @property {string} motherMaidenName
+ */
+
 class Users extends ConnectionHandler {
     constructor(client) {
         if (!client) throw new Error("Non-client call");
@@ -16,6 +28,31 @@ class Users extends ConnectionHandler {
         this.client = client;
     }
 
+    createUser(/** @type {UserObject} */ {
+        name,
+        surname,
+        email,
+        gsmNumber,
+        tcIdentificationNumber,
+        password,
+        birthDate,
+        motherMaidenName
+    }) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                if (!name || !surname || !email || !gsmNumber || !tcIdentificationNumber || !password || !birthDate || !motherMaidenName) throw new Error("One or more variables are missing.");
+                var _reqconfig = await this._reqconfig();
+                var req = await this.sendRequest("POST", "", _reqconfig, {name, surname, email, gsmNumber, tcIdentificationNumber, password, birthDate, motherMaidenName});
+                return resolve(req);
+            } catch (error) {
+                return reject(error);
+            }
+        });
+    }
+
+    /**
+     * @private
+     */
     _reqconfig() {
         return new Promise(async (resolve, reject) => {
             try {

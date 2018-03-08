@@ -9,19 +9,39 @@ const request = require("request-promise-native");
 const ininalAPIError = require("./ininalAPIError");
 const Package = require("../../package.json");
 
+/**
+ * @typedef {Object} KeyType
+ * @property {"basic" | "bearer"} authType
+ * @property {string} bearerToken
+ * @property {string} api_key
+ * @property {string} secret_key
+ */
+
+/**
+ * @typedef {Object} Endpoint
+ * @property {string} endpoint
+ */
+
 class ConnectionHandler {
-    constructor({
+    constructor(/** @type {Endpoint} */{
         endpoint
     }) {
         this.endpoint = endpoint;
     }
-
-    createConfig(method, path, {
-        authType = null,
-        bearerToken = null,
-        api_key = null,
-        secret_key = null,
-    }, ...data) {
+  
+    /**
+     * Creates the request config for the "request" package.
+     * @param {"GET" | "POST" | "PUT"} method 
+     * @param {string} path 
+     * @param {Object} postputObj 
+     * @private
+     */
+    _createConfig(method, path, /** @type {KeyType} */ {
+        authType,
+        bearerToken,
+        api_key,
+        secret_key
+    }, postputObj) {
         var base = {
             method: method,
             baseUrl: this.endpoint,
@@ -48,21 +68,27 @@ class ConnectionHandler {
                 break;
         }
         
-        if (data && typeof(data[0]) === "object" && method.toLowerCase() !== "GET") {
-            base.body = data[0];
+        if (postputObj && typeof(postputObj) === "object" && method.toLowerCase() !== "GET") {
+            base.body = postputObj;
         }
 
         return base;
     }
 
-    sendRequest(method, path, {
+    /**
+     * Sends requests to the given path on the endpoint.
+     * @param {"GET" | "POST" | "PUT"} method 
+     * @param {string} path 
+     * @param {Object?} postputObj 
+     */
+    sendRequest(method, path, /** @type {KeyType} */{
         authType = null,
         bearerToken = null,
         api_key = null,
         secret_key = null,
-    }, ...args) {
+    }, postputObj = null) {
         return new Promise(async (resolve, reject) => {
-            var requestConfig = this.createConfig(method, path, { authType, bearerToken, api_key, secret_key }, ...args);
+            var requestConfig = this._createConfig(method, path, { authType, bearerToken, api_key, secret_key }, postputObj);
             try {
                 var req = await request(requestConfig);
                 if (req.response) return resolve(req.response);
