@@ -80,6 +80,7 @@ class ConnectionHandler {
      * @param {"GET" | "POST" | "PUT"} method 
      * @param {string} path 
      * @param {Object?} postputObj 
+     * @returns {Promise<Object>}
      */
     sendRequest(method, path, /** @type {KeyType} */{
         authType = null,
@@ -94,8 +95,7 @@ class ConnectionHandler {
                 if (req.response) return resolve(req.response);
                 return reject("Endpoint returned nothing");
             } catch (error) {
-                var remoteErr = error.response.body;
-                if (remoteErr.response) return reject(new ininalAPIError(remoteErr.response.errorCode, remoteErr.response.errorDescription));
+                if (error.response && error.response.body.response) return reject(new ininalAPIError(error.response.body.response.errorCode, error.response.body.response.errorDescription));
                 return reject(error);
             }
         });

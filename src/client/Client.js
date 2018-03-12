@@ -10,8 +10,15 @@ const Cards = require("../interfaces/Cards");
 const Transactions = require("../interfaces/Transactions");
 const Users = require("../interfaces/Users");
 
+/**
+ * @typedef {Object} ClientOptions
+ * @property {string} api_key
+ * @property {string} secret_key
+ * @property {boolean} [isSandbox = false]
+ */
+
 class Client {
-    constructor({
+    constructor(/** @type {ClientOptions} */{
         api_key,
         secret_key,
         isSandbox = false
