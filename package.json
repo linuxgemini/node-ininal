@@ -1,11 +1,19 @@
 {
   "name": "ininal",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "API wrapper for the Turkish Fintech company \"ininal\".",
-  "main": "./src/index",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p .",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/linuxgemini/node-ininal.git"
@@ -24,5 +32,13 @@
   "dependencies": {
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.10",
+    "@types/request-promise-native": "^1.0.16",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.2"
   }
 }
