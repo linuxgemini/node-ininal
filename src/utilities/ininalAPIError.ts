@@ -3,7 +3,7 @@
  *  Licensed under the MIT License.
  *-------------------------------------------------------------*/
 
-class ininalAPIError extends Error {
+class IninalAPIError extends Error {
     public code: string;
     public date: Date;
     constructor(errcode = "0000", errmessage = "Critical code error on wrapper, contact @linuxgemini", ...params: any) {
@@ -12,15 +12,15 @@ class ininalAPIError extends Error {
 
         // Maintains proper stack trace for where our error was thrown (only available on V8)
         if (Error.captureStackTrace) {
-            Error.captureStackTrace(this, ininalAPIError);
+            Error.captureStackTrace(this, IninalAPIError);
         }
 
         // Custom debugging information
-        this.name = "ininalAPIError";
+        this.name = "IninalAPIError";
         this.code = errcode;
         this.message = errmessage;
         this.date = new Date();
     }
 }
 
-export default ininalAPIError;
+export default IninalAPIError;

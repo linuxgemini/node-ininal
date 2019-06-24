@@ -1,14 +1,14 @@
 import request from "request-promise-native"
-import ininalAPIError from "./ininalAPIError"
+import IninalAPIError from "./IninalAPIError"
 
-interface configAuthObject {
+interface ConfigAuthObject {
     authType: "basic" | "bearer";
     bearerToken?: string;
     api_key?: string;
     secret_key?: string;
 }
 
-interface requestConfigObject {
+interface RequestConfigObject {
     method: string;
     baseUrl: string;
     uri: string;
@@ -25,8 +25,8 @@ class ConnectionHandler {
         this.ENDPOINT = endpoint;
     }
 
-    private _createConfig(method: "GET" | "POST" | "PUT", path: string, { authType, bearerToken, api_key, secret_key }: configAuthObject, postputObj?: object) {
-        let base: requestConfigObject = {
+    private _createConfig(method: "GET" | "POST" | "PUT", path: string, { authType, bearerToken, api_key, secret_key }: ConfigAuthObject, postputObj?: object) {
+        let base: RequestConfigObject = {
             method: method,
             baseUrl: this.ENDPOINT,
             uri: path,
@@ -54,22 +54,22 @@ class ConnectionHandler {
                 break;
         }
 
-        if (postputObj && typeof (postputObj) === "object" && method.toLowerCase() !== "GET") {
+        if (postputObj && method.toLowerCase() !== "GET") {
             base.body = postputObj;
         }
 
         return base;
     }
 
-    public sendRequest(method: "GET" | "POST" | "PUT", path: string, { authType, bearerToken, api_key, secret_key }: configAuthObject, postputObj?: object): Promise<any> {
+    public sendRequest(method: "GET" | "POST" | "PUT", path: string, { authType, bearerToken, api_key, secret_key }: ConfigAuthObject, postputObj?: object): Promise<any> {
         return new Promise(async (resolve, reject) => {
             let requestConfig = this._createConfig(method, path, { authType, bearerToken, api_key, secret_key }, postputObj);
             try {
-                var req = await request(requestConfig);
+                let req = await request(requestConfig); // tslint:disable-line
                 if (req.response) return resolve(req.response);
-                return reject("Endpoint returned nothing");
+                return resolve("");
             } catch (error) {
-                if (error.response && error.response.body.response) return reject(new ininalAPIError(error.response.body.response.errorCode, error.response.body.response.errorDescription));
+                if (error.response && error.response.body.response) return reject(new IninalAPIError(error.response.body.response.errorCode, error.response.body.response.errorDescription));
                 return reject(error);
             }
         });

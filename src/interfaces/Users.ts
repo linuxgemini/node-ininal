@@ -1,4 +1,4 @@
-import ininal from "..";
+import Ininal from "..";
 import ConnectionHandler from "../utilities/ConnectionHandler";
 
 type UserToken = string;
@@ -36,9 +36,9 @@ interface OTPTokenObject {
 }
 
 class Users extends ConnectionHandler {
-    private client: ininal;
+    private client: Ininal;
 
-    constructor(client: ininal) {
+    constructor(client: Ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/users/" : "https://api.ininal.com/v2/users/"));
         this.client = client;
     }
@@ -64,11 +64,11 @@ class Users extends ConnectionHandler {
         });
     }
 
-    getUserInfo(user_token: string): Promise<UserInfoObject> {
+    getUserInfo(userToken: string): Promise<UserInfoObject> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: UserInfoObject = await this.sendRequest("GET", `/${user_token}`, _reqconfig);
+                let req: UserInfoObject = await this.sendRequest("GET", `/${userToken}`, _reqconfig);
                 return resolve(req);
             } catch (error) {
                 return reject(error);
@@ -77,11 +77,11 @@ class Users extends ConnectionHandler {
     }
 
 
-    getUserCards(user_token: string): Promise<UserCard[]> {
+    getUserCards(userToken: string): Promise<UserCard[]> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: UserCard[] = await this.sendRequest("GET", `/${user_token}/cards`, _reqconfig);
+                let req: UserCard[] = await this.sendRequest("GET", `/${userToken}/cards`, _reqconfig);
                 return resolve(req);
             } catch (error) {
                 return reject(error);
@@ -89,11 +89,11 @@ class Users extends ConnectionHandler {
         });
     }
 
-    attachCard(user_token: string, lastDigits: string, barcodeNumber: string): Promise<CardToken> {
+    attachCard(userToken: string, lastDigits: string, barcodeNumber: string): Promise<CardToken> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: CardTokenObject = await this.sendRequest("POST", `/${user_token}/cards/attach`, _reqconfig, {
+                let req: CardTokenObject = await this.sendRequest("POST", `/${userToken}/cards/attach`, _reqconfig, {
                     "lastDigits": lastDigits,
                     "barcodeNumber": barcodeNumber
                 });
@@ -104,11 +104,11 @@ class Users extends ConnectionHandler {
         });
     }
 
-    createVirtualCard(user_token: string): Promise<CardToken> {
+    createVirtualCard(userToken: string): Promise<CardToken> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: CardTokenObject = await this.sendRequest("POST", `/${user_token}/cards/virtual`, _reqconfig, {
+                let req: CardTokenObject = await this.sendRequest("POST", `/${userToken}/cards/virtual`, _reqconfig, {
                     "virtualCardChannel": "I",
                     "productCode": "IK"
                 });
@@ -119,11 +119,11 @@ class Users extends ConnectionHandler {
         });
     }
 
-    updateGSMnumber(user_token: string, gsmNumber: string): Promise<{}> {
+    updateGSMnumber(userToken: string, gsmNumber: string): Promise<{}> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: {} = await this.sendRequest("PUT", `/${user_token}/gsmnumber`, _reqconfig, {
+                let req: {} = await this.sendRequest("PUT", `/${userToken}/gsmnumber`, _reqconfig, {
                     "gsmNumber": gsmNumber
                 });
                 return resolve(req);
@@ -133,11 +133,11 @@ class Users extends ConnectionHandler {
         });
     }
 
-    sendOTP(user_token: string): Promise<OTPToken> {
+    sendOTP(userToken: string): Promise<OTPToken> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: OTPTokenObject = await this.sendRequest("POST", `/${user_token}/send/otp`, _reqconfig);
+                let req: OTPTokenObject = await this.sendRequest("POST", `/${userToken}/send/otp`, _reqconfig);
                 return resolve(req.token);
             } catch (error) {
                 return reject(error);
@@ -145,11 +145,11 @@ class Users extends ConnectionHandler {
         });
     }
 
-    verifyOTP(user_token: string, token: OTPToken, otp: string): Promise<{}> {
+    verifyOTP(userToken: string, token: OTPToken, otp: string): Promise<{}> {
         return new Promise(async (resolve, reject) => {
             try {
                 let _reqconfig = await this._reqconfig();
-                let req: {} = await this.sendRequest("POST", `/${user_token}/verify/otp`, _reqconfig, {
+                let req: {} = await this.sendRequest("POST", `/${userToken}/verify/otp`, _reqconfig, {
                     "token": token,
                     "otp": otp
                 });

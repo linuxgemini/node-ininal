@@ -1,4 +1,4 @@
-import ininal from ".."
+import Ininal from ".."
 import ConnectionHandler from "../utilities/ConnectionHandler";
 
 interface CardInfo {
@@ -51,8 +51,8 @@ interface TransferTokenObject {
 }
 
 class Cards extends ConnectionHandler {
-    private client: ininal;
-    constructor(client: ininal) {
+    private client: Ininal;
+    constructor(client: Ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/cards/" : "https://api.ininal.com/v2/cards/"));
         this.client = client;
     }
@@ -60,8 +60,8 @@ class Cards extends ConnectionHandler {
     getCardInfo(cardToken: string): Promise<CardInfo> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: CardInfo = await this.sendRequest("GET", `/${cardToken}`, _reqconfig);
+                let _reqconfig = await this._reqconfig();
+                let req: CardInfo = await this.sendRequest("GET", `/${cardToken}`, _reqconfig);
                 return resolve(req);
             } catch (error) {
                 return reject(error);
@@ -72,8 +72,8 @@ class Cards extends ConnectionHandler {
     createAnonymousVirtualCard(): Promise<AnonymousVirtualCardData> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: AnonymousVirtualCardData = await this.sendRequest("POST", "/virtual", _reqconfig);
+                let _reqconfig = await this._reqconfig();
+                let req: AnonymousVirtualCardData = await this.sendRequest("POST", "/virtual", _reqconfig);
                 return resolve(req);
             } catch (error) {
                 return reject(error);
@@ -84,8 +84,8 @@ class Cards extends ConnectionHandler {
     updateCardStatus(cardToken: string, userToken: string, cardStatus: "BLOCK" | "UNBLOCK"): Promise<{}> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: {} = await this.sendRequest("PUT", `/${cardToken}/status`, _reqconfig, {
+                let _reqconfig = await this._reqconfig();
+                let req: {} = await this.sendRequest("PUT", `/${cardToken}/status`, _reqconfig, {
                     "userToken": userToken,
                     "cardStatus": cardStatus
                 });
@@ -99,8 +99,8 @@ class Cards extends ConnectionHandler {
     getCardBalance(cardToken: string): Promise<CardBalanceObject> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: CardBalanceObject = await this.sendRequest("GET", `/${cardToken}/balance`, _reqconfig);
+                let _reqconfig = await this._reqconfig();
+                let req: CardBalanceObject = await this.sendRequest("GET", `/${cardToken}/balance`, _reqconfig);
                 return resolve(req);
             } catch (error) {
                 return reject(error);
@@ -111,8 +111,8 @@ class Cards extends ConnectionHandler {
     setOrRemindCardPin(cardToken: string, issuingType: "NEW" | "OLD"): Promise<{}> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: {} = await this.sendRequest("PUT", `/${cardToken}/pin`, _reqconfig, {
+                let _reqconfig = await this._reqconfig();
+                let req: {} = await this.sendRequest("PUT", `/${cardToken}/pin`, _reqconfig, {
                     "issuingType": issuingType
                 });
                 return resolve(req);
@@ -125,8 +125,8 @@ class Cards extends ConnectionHandler {
     getCardTransactions(cardToken: string, startDate: UTCString, endDate: UTCString): Promise<CardTransactionData> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: CardTransactionData = await this.sendRequest("GET", `/${cardToken}/transactions/${startDate}/${endDate}`, _reqconfig);
+                let _reqconfig = await this._reqconfig();
+                let req: CardTransactionData = await this.sendRequest("GET", `/${cardToken}/transactions/${startDate}/${endDate}`, _reqconfig);
                 return resolve(req);
             } catch (error) {
                 return reject(error);
@@ -137,8 +137,8 @@ class Cards extends ConnectionHandler {
     startBalanceTransfer(sourceCardToken: string, targetBarcodeNumber: string, feeResource: "SOURCE" | "TARGET", amount: number, desc: string = ""): Promise<TransferToken> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: TransferTokenObject = await this.sendRequest("POST", `/${sourceCardToken}/transfer`, _reqconfig, {
+                let _reqconfig = await this._reqconfig();
+                let req: TransferTokenObject = await this.sendRequest("POST", `/${sourceCardToken}/transfer`, _reqconfig, {
                     "targetBarcodeNumber": targetBarcodeNumber,
                     "feeResource": feeResource,
                     "amount": amount,
@@ -154,8 +154,8 @@ class Cards extends ConnectionHandler {
     endBalanceTransfer(sourceCardToken: string, transferToken: TransferToken): Promise<{}> {
         return new Promise(async (resolve, reject) => {
             try {
-                var _reqconfig = await this._reqconfig();
-                var req: {} = await this.sendRequest("PUT", `/${sourceCardToken}/transfer`, _reqconfig, {
+                let _reqconfig = await this._reqconfig();
+                let req: {} = await this.sendRequest("PUT", `/${sourceCardToken}/transfer`, _reqconfig, {
                     "transferToken": transferToken
                 });
                 return resolve(req);

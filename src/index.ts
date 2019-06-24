@@ -6,7 +6,7 @@ import Users from "./interfaces/Users"
 /**
  * Initial class of the ininal API.
  */
-class ininal {
+class Ininal {
     public APIKEY: string;
     public SECRETKEY: string;
     public SANDBOX: boolean;
@@ -21,16 +21,16 @@ class ininal {
 
     /**
      * ininal API constructor.
-     * @param api_key API Key provided by ininal.
-     * @param secret_key Secret Key provided by ininal.
+     * @param apiKey API Key provided by ininal.
+     * @param secretKey Secret Key provided by ininal.
      * @param sandbox Use the sandbox, if enabled.
      */
-    constructor(api_key: string, secret_key: string, sandbox = false) {
-        if (!api_key) throw new Error("API key is not provided.");
-        if (!secret_key) throw new Error("Secret key is not provided.");
+    constructor(apiKey: string, secretKey: string, sandbox = false) {
+        if (!apiKey) throw new Error("API key is not provided.");
+        if (!secretKey) throw new Error("Secret key is not provided.");
 
-        this.APIKEY = api_key;
-        this.SECRETKEY = secret_key;
+        this.APIKEY = apiKey;
+        this.SECRETKEY = secretKey;
         this.SANDBOX = sandbox;
 
         this.authentication = new Authentication(this);
@@ -46,6 +46,6 @@ class ininal {
     }
 }
 
-export default ininal;
+export default Ininal;
 
-export const Client = ininal;
+export const Client = Ininal;
