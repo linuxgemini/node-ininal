@@ -60,3 +60,4 @@ typings/
 # custom files
 test/priv*
 package-lock.json
+lib/

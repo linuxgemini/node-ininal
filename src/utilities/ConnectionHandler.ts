@@ -1,8 +1,6 @@
 import request from "request-promise-native"
 import ininalAPIError from "./ininalAPIError"
 
-import Package from "../../package.json"
-
 interface configAuthObject {
     authType: "basic" | "bearer";
     bearerToken?: string;
@@ -33,7 +31,7 @@ class ConnectionHandler {
             baseUrl: this.ENDPOINT,
             uri: path,
             headers: {
-                "User-Agent": `node-ininal Application (${Package.homepage.split("#")[0]}, ${Package.version}) Node.js/${process.version}`,
+                "User-Agent": `node-ininal Application, Node.js/${process.version}`,
                 "Language": "TR",
                 "Date": new Date().toUTCString()
             },

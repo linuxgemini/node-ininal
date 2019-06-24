@@ -3,17 +3,16 @@ import Cards from "./interfaces/Cards"
 import Transactions from "./interfaces/Transactions"
 import Users from "./interfaces/Users"
 
-
 /**
  * Initial class of the ininal API.
  */
 class ininal {
-    private APIKEY: string;
-    private SECRETKEY: string;
-    private SANDBOX: boolean;
+    public APIKEY: string;
+    public SECRETKEY: string;
+    public SANDBOX: boolean;
 
-    private TOKENEXPIRY!: number;
-    private ACCESSTOKEN!: string;
+    public TOKENEXPIRY!: number;
+    public ACCESSTOKEN!: string;
 
     public authentication: Authentication;
     public cards: Cards;
@@ -41,10 +40,12 @@ class ininal {
 
     }
 
-    private isAuthenticated(): boolean {
+    public isAuthenticated(): boolean {
         if (!this.TOKENEXPIRY) return false;
         return (Date.now() < this.TOKENEXPIRY);
     }
 }
 
 export default ininal;
+
+export const Client = ininal;

@@ -1,3 +1,4 @@
+import ininal from ".."
 import ConnectionHandler from "../utilities/ConnectionHandler"
 
 interface accessObject {
@@ -8,13 +9,12 @@ interface accessObject {
 
 class Authentication extends ConnectionHandler {
     private client: ininal;
-    constructor(client: this) {
-        if (!client) throw new Error("Non-client call");
+    constructor(client: ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/" : "https://api.ininal.com/v2/"));
         this.client = client;
     }
 
-    authenticate() {
+    authenticate(): Promise<any> {
         return new Promise(async (resolve, reject) => {
             try {
                 if (this.client.isAuthenticated()) return resolve(true);
