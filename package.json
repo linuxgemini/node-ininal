@@ -1,13 +1,13 @@
 {
   "name": "ininal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "API wrapper for the Turkish Fintech company \"ininal\".",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "lib",
