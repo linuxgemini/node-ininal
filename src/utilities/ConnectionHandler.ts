@@ -69,7 +69,7 @@ class ConnectionHandler {
                 if (req.response) return resolve(req.response);
                 return resolve("");
             } catch (error) {
-                if (error.response && error.response.body.response) return reject(new IninalAPIError(error.response.body.response.errorCode, error.response.body.response.errorDescription));
+                if (error.response && error.response.body && error.response.body.response) return reject(new IninalAPIError(error.response.body.response.errorCode, error.response.body.response.errorDescription));
                 return reject(error);
             }
         });
