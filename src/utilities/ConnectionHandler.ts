@@ -1,6 +1,9 @@
 import request from "request-promise-native"
 import IninalAPIError from "./IninalAPIError"
 
+/**
+ * @ignore
+ */
 interface ConfigAuthObject {
     authType: "basic" | "bearer";
     bearerToken?: string;
@@ -8,6 +11,9 @@ interface ConfigAuthObject {
     secret_key?: string;
 }
 
+/**
+ * @ignore
+ */
 interface RequestConfigObject {
     method: string;
     baseUrl: string;
@@ -18,6 +24,9 @@ interface RequestConfigObject {
     body?: any;
 }
 
+/**
+ * @ignore
+ */
 class ConnectionHandler {
     private ENDPOINT: string;
 
@@ -25,6 +34,9 @@ class ConnectionHandler {
         this.ENDPOINT = endpoint;
     }
 
+    /**
+     * @ignore
+     */
     private _createConfig(method: "GET" | "POST" | "PUT", path: string, { authType, bearerToken, api_key, secret_key }: ConfigAuthObject, postputObj?: object) {
         let base: RequestConfigObject = {
             method: method,
@@ -62,6 +74,9 @@ class ConnectionHandler {
         return base;
     }
 
+    /**
+     * @ignore
+     */
     public sendRequest(method: "GET" | "POST" | "PUT", path: string, { authType, bearerToken, api_key, secret_key }: ConfigAuthObject, postputObj?: object): Promise<any> {
         return new Promise(async (resolve, reject) => {
             let requestConfig = this._createConfig(method, path, { authType, bearerToken, api_key, secret_key }, postputObj);
@@ -77,4 +92,7 @@ class ConnectionHandler {
     }
 }
 
+/**
+ * @ignore
+ */
 export default ConnectionHandler;

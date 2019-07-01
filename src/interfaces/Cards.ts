@@ -51,7 +51,14 @@ interface TransferTokenObject {
 }
 
 class Cards extends ConnectionHandler {
+    /**
+     * @ignore
+     */
     private client: Ininal;
+
+    /**
+     * @ignore
+     */
     constructor(client: Ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/cards/" : "https://api.ininal.com/v2/cards/"));
         this.client = client;
@@ -165,6 +172,9 @@ class Cards extends ConnectionHandler {
         });
     }
 
+    /**
+     * @ignore
+     */
     private _reqconfig(): Promise<{ authType: "bearer", bearerToken: string }> {
         return new Promise(async (resolve, reject) => {
             try {

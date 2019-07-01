@@ -36,8 +36,14 @@ interface OTPTokenObject {
 }
 
 class Users extends ConnectionHandler {
+    /**
+     * @ignore
+     */
     private client: Ininal;
 
+    /**
+     * @ignore
+     */
     constructor(client: Ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/users/" : "https://api.ininal.com/v2/users/"));
         this.client = client;
@@ -160,6 +166,9 @@ class Users extends ConnectionHandler {
         });
     }
 
+    /**
+     * @ignore
+     */
     private _reqconfig(): Promise<{ authType: "bearer", bearerToken: string }> {
         return new Promise(async (resolve, reject) => {
             try {

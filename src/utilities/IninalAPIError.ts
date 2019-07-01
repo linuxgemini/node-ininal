@@ -3,6 +3,9 @@
  *  Licensed under the MIT License.
  *-------------------------------------------------------------*/
 
+/**
+ * @ignore
+ */
 class IninalAPIError extends Error {
     public code: string;
     public date: Date;
@@ -23,4 +26,7 @@ class IninalAPIError extends Error {
     }
 }
 
+/**
+ * @ignore
+ */
 export default IninalAPIError;

@@ -30,7 +30,14 @@ interface PointOfSaleObject {
 }
 
 class Transactions extends ConnectionHandler {
+    /**
+     * @ignore
+     */
     private client: Ininal;
+
+    /**
+     * @ignore
+     */
     constructor(client: Ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/transactions/" : "https://api.ininal.com/v2/transactions/"));
         this.client = client;
@@ -127,6 +134,9 @@ class Transactions extends ConnectionHandler {
         });
     }
 
+    /**
+     * @ignore
+     */
     private _reqconfig(): Promise<{ authType: "bearer", bearerToken: string }> {
         return new Promise(async (resolve, reject) => {
             try {

@@ -8,7 +8,14 @@ interface AccessObject {
 }
 
 class Authentication extends ConnectionHandler {
+    /**
+     * @ignore
+     */
     private client: Ininal;
+
+    /**
+     * @ignore
+     */
     constructor(client: Ininal) {
         super((client.SANDBOX ? "https://sandbox-api.ininal.com/v2/" : "https://api.ininal.com/v2/"));
         this.client = client;

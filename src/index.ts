@@ -7,11 +7,26 @@ import Users from "./interfaces/Users"
  * Initial class of the ininal API.
  */
 class Ininal {
+    /**
+     * @ignore
+     */
     public APIKEY: string;
+    /**
+     * @ignore
+     */
     public SECRETKEY: string;
+    /**
+     * @ignore
+     */
     public SANDBOX: boolean;
 
+    /**
+     * @ignore
+     */
     public TOKENEXPIRY!: number;
+    /**
+     * @ignore
+     */
     public ACCESSTOKEN!: string;
 
     public authentication: Authentication;
@@ -40,6 +55,9 @@ class Ininal {
 
     }
 
+    /**
+     * @ignore
+     */
     public isAuthenticated(): boolean {
         if (!this.TOKENEXPIRY) return false;
         return (Date.now() < this.TOKENEXPIRY);
