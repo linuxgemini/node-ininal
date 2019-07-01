@@ -1,6 +1,10 @@
-# node-ininal
+# ininal
 
 API wrapper for the Turkish Fintech company "ininal".
+
+```
+    $ npm install --save ininal
+```
 
 Get your keys from [here](https://developer.ininal.com/).
 
