@@ -1,6 +1,9 @@
 import Ininal from ".."
 import ConnectionHandler from "../utilities/ConnectionHandler"
 
+/**
+ * @ignore
+ */
 interface AccessObject {
     accessToken: string;
     tokenType: string;

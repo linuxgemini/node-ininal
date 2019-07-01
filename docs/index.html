@@ -66,8 +66,16 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="node-ininal">node-ininal</h1>
 				<p>API wrapper for the Turkish Fintech company &quot;ininal&quot;.</p>
-				<p>Now with types included! Based from the mess from <a href="https://developer.ininal.com/">here</a>.</p>
-				<p>Docs are available <a href="https://linuxgemini.github.io/node-ininal/">here</a>.</p>
+				<p>Get your keys from <a href="https://developer.ininal.com/">here</a>.</p>
+				<p>Docs are available <a href="https://linuxgemini.github.io/node-ininal/classes/ininal.html#constructor">here</a>.</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> sandbox = <span class="hljs-literal">true</span>;
+
+<span class="hljs-keyword">const</span> Ininal = <span class="hljs-built_in">require</span>(<span class="hljs-string">"ininal"</span>);
+
+<span class="hljs-comment">// https://linuxgemini.github.io/node-ininal/classes/ininal.html#constructor</span>
+<span class="hljs-keyword">const</span> ininal = <span class="hljs-keyword">new</span> Ininal.Client(<span class="hljs-string">"api_key-from_ininal"</span>, <span class="hljs-string">"secret_key-from_ininal"</span>, sandbox);
+
+<span class="hljs-comment">// you are ready!</span></code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -76,25 +84,91 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_authentication_.html">"interfaces/<wbr>Authentication"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_cards_.html">"interfaces/<wbr>Cards"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_transactions_.html">"interfaces/<wbr>Transactions"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_users_.html">"interfaces/<wbr>Users"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/authentication.html" class="tsd-kind-icon">Authentication</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cards.html" class="tsd-kind-icon">Cards</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ininal.html" class="tsd-kind-icon">Ininal</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/transactions.html" class="tsd-kind-icon">Transactions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/users.html" class="tsd-kind-icon">Users</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/anonymousvirtualcarddata.html" class="tsd-kind-icon">Anonymous<wbr>Virtual<wbr>Card<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/cardbalanceobject.html" class="tsd-kind-icon">Card<wbr>Balance<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/cardinfo.html" class="tsd-kind-icon">Card<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/cardtokenobject.html" class="tsd-kind-icon">Card<wbr>Token<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/cardtransactiondata.html" class="tsd-kind-icon">Card<wbr>Transaction<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/otptokenobject.html" class="tsd-kind-icon">OTPToken<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/pointofsaleobject.html" class="tsd-kind-icon">Point<wbr>OfSale<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/provisioncodeobject.html" class="tsd-kind-icon">Provision<wbr>Code<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/referencenumberobject.html" class="tsd-kind-icon">Reference<wbr>Number<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/transactioninobject.html" class="tsd-kind-icon">Transaction<wbr>InObject</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/transfertokenobject.html" class="tsd-kind-icon">Transfer<wbr>Token<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/usercard.html" class="tsd-kind-icon">User<wbr>Card</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/userinfoobject.html" class="tsd-kind-icon">User<wbr>Info<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/usertokenobject.html" class="tsd-kind-icon">User<wbr>Token<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#cardtoken" class="tsd-kind-icon">Card<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#otptoken" class="tsd-kind-icon">OTPToken</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#provisioncode" class="tsd-kind-icon">Provision<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#referencenumber" class="tsd-kind-icon">Reference<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#transfertoken" class="tsd-kind-icon">Transfer<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#utcstring" class="tsd-kind-icon">UTCString</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#usertoken" class="tsd-kind-icon">User<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#client" class="tsd-kind-icon">Client</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

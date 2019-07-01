@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AccessObject | ininal</title>
+	<title>AnonymousVirtualCardData | ininal</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_interfaces_authentication_.html">&quot;interfaces/Authentication&quot;</a>
-				</li>
-				<li>
-					<a href="_interfaces_authentication_.accessobject.html">AccessObject</a>
+					<a href="anonymousvirtualcarddata.html">AnonymousVirtualCardData</a>
 				</li>
 			</ul>
-			<h1>Interface AccessObject</h1>
+			<h1>Interface AnonymousVirtualCardData</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AccessObject</span>
+						<span class="target">AnonymousVirtualCardData</span>
 					</li>
 				</ul>
 			</section>
@@ -84,9 +81,10 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_interfaces_authentication_.accessobject.html#accesstoken" class="tsd-kind-icon">access<wbr>Token</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_interfaces_authentication_.accessobject.html#expiresin" class="tsd-kind-icon">expires<wbr>In</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_interfaces_authentication_.accessobject.html#tokentype" class="tsd-kind-icon">token<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="anonymousvirtualcarddata.html#barcodenumber" class="tsd-kind-icon">barcode<wbr>Number</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="anonymousvirtualcarddata.html#cardnumber" class="tsd-kind-icon">card<wbr>Number</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="anonymousvirtualcarddata.html#cvv" class="tsd-kind-icon">cvv</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="anonymousvirtualcarddata.html#expdate" class="tsd-kind-icon">exp<wbr>Date</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,32 +93,42 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="accesstoken" class="tsd-anchor"></a>
-					<h3>access<wbr>Token</h3>
-					<div class="tsd-signature tsd-kind-icon">access<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="barcodenumber" class="tsd-anchor"></a>
+					<h3>barcode<wbr>Number</h3>
+					<div class="tsd-signature tsd-kind-icon">barcode<wbr>Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/483a7f3/src/interfaces/Authentication.ts#L5">interfaces/Authentication.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/74876a4/src/interfaces/Cards.ts#L23">interfaces/Cards.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="expiresin" class="tsd-anchor"></a>
-					<h3>expires<wbr>In</h3>
-					<div class="tsd-signature tsd-kind-icon">expires<wbr>In<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="cardnumber" class="tsd-anchor"></a>
+					<h3>card<wbr>Number</h3>
+					<div class="tsd-signature tsd-kind-icon">card<wbr>Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/483a7f3/src/interfaces/Authentication.ts#L7">interfaces/Authentication.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/74876a4/src/interfaces/Cards.ts#L22">interfaces/Cards.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="tokentype" class="tsd-anchor"></a>
-					<h3>token<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">token<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="cvv" class="tsd-anchor"></a>
+					<h3>cvv</h3>
+					<div class="tsd-signature tsd-kind-icon">cvv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/483a7f3/src/interfaces/Authentication.ts#L6">interfaces/Authentication.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/74876a4/src/interfaces/Cards.ts#L24">interfaces/Cards.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="expdate" class="tsd-anchor"></a>
+					<h3>exp<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">exp<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/linuxgemini/node-ininal/blob/74876a4/src/interfaces/Cards.ts#L25">interfaces/Cards.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -132,46 +140,109 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_interfaces_authentication_.html">"interfaces/<wbr>Authentication"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_interfaces_cards_.html">"interfaces/<wbr>Cards"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_interfaces_transactions_.html">"interfaces/<wbr>Transactions"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_interfaces_users_.html">"interfaces/<wbr>Users"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_interfaces_authentication_.authentication.html" class="tsd-kind-icon">Authentication</a>
+					<li class=" tsd-kind-class">
+						<a href="../classes/authentication.html" class="tsd-kind-icon">Authentication</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/cards.html" class="tsd-kind-icon">Cards</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/ininal.html" class="tsd-kind-icon">Ininal</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/transactions.html" class="tsd-kind-icon">Transactions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/users.html" class="tsd-kind-icon">Users</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_interfaces_authentication_.accessobject.html" class="tsd-kind-icon">Access<wbr>Object</a>
+					<li class="current tsd-kind-interface tsd-is-not-exported">
+						<a href="anonymousvirtualcarddata.html" class="tsd-kind-icon">Anonymous<wbr>Virtual<wbr>Card<wbr>Data</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_interfaces_authentication_.accessobject.html#accesstoken" class="tsd-kind-icon">access<wbr>Token</a>
+								<a href="anonymousvirtualcarddata.html#barcodenumber" class="tsd-kind-icon">barcode<wbr>Number</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_interfaces_authentication_.accessobject.html#expiresin" class="tsd-kind-icon">expires<wbr>In</a>
+								<a href="anonymousvirtualcarddata.html#cardnumber" class="tsd-kind-icon">card<wbr>Number</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_interfaces_authentication_.accessobject.html#tokentype" class="tsd-kind-icon">token<wbr>Type</a>
+								<a href="anonymousvirtualcarddata.html#cvv" class="tsd-kind-icon">cvv</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="anonymousvirtualcarddata.html#expdate" class="tsd-kind-icon">exp<wbr>Date</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="cardbalanceobject.html" class="tsd-kind-icon">Card<wbr>Balance<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="cardinfo.html" class="tsd-kind-icon">Card<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="cardtokenobject.html" class="tsd-kind-icon">Card<wbr>Token<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="cardtransactiondata.html" class="tsd-kind-icon">Card<wbr>Transaction<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="otptokenobject.html" class="tsd-kind-icon">OTPToken<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="pointofsaleobject.html" class="tsd-kind-icon">Point<wbr>OfSale<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="provisioncodeobject.html" class="tsd-kind-icon">Provision<wbr>Code<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="referencenumberobject.html" class="tsd-kind-icon">Reference<wbr>Number<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="transactioninobject.html" class="tsd-kind-icon">Transaction<wbr>InObject</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="transfertokenobject.html" class="tsd-kind-icon">Transfer<wbr>Token<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="usercard.html" class="tsd-kind-icon">User<wbr>Card</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="userinfoobject.html" class="tsd-kind-icon">User<wbr>Info<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="usertokenobject.html" class="tsd-kind-icon">User<wbr>Token<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#cardtoken" class="tsd-kind-icon">Card<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#otptoken" class="tsd-kind-icon">OTPToken</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#provisioncode" class="tsd-kind-icon">Provision<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#referencenumber" class="tsd-kind-icon">Reference<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#transfertoken" class="tsd-kind-icon">Transfer<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#utcstring" class="tsd-kind-icon">UTCString</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#usertoken" class="tsd-kind-icon">User<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#client" class="tsd-kind-icon">Client</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
