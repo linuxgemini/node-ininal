@@ -33,7 +33,8 @@ class ConnectionHandler {
             headers: {
                 "User-Agent": `node-ininal Application, Node.js/${process.version}`,
                 "Language": "TR",
-                "Date": new Date().toUTCString()
+                "Date": new Date().toUTCString(),
+                "Content-Type": "application/json"
             },
             json: true
         };

@@ -1,6 +1,6 @@
 {
   "name": "ininal",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "API wrapper for the Turkish Fintech company \"ininal\".",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
